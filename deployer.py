@@ -12,7 +12,8 @@ def deploy():
 	if request.method == 'GET':
 		return 'Deployment server is up.'
 
-	call([DEPLOY_SCRIPT, '/home/web-ma'])
+	call([DEPLOY_SCRIPT, '/home/web-ma'], shell=True)
+	return 'Done!'
 
 if __name__ == '__main__':
  	app.run(port=6868, debug=True)
